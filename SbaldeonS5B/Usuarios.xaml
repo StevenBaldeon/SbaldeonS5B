@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SbaldeonS5B.Usuarios">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="TABLA USUARIOS" FontSize="20" HorizontalTextAlignment="Center"/>
+            
+                <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="IdUsuarios" TextColor="Red" FontSize="18" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center"/>
+                <Label Text="Nombre" TextColor="Red" FontSize="18" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Center"/>
+                <Label Text="Email" TextColor="Red" FontSize="18" Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Center"/>
+                <Label Text="Contraseña" TextColor="Red" FontSize="18" Grid.Row="0" Grid.Column="3" HorizontalTextAlignment="Center"/>
+                <Label Text="Fecha de Nacimiento" TextColor="Red" FontSize="18" Grid.Row="0" Grid.Column="4" HorizontalTextAlignment="Center"/>
+                <Label Text="Genero" TextColor="Red" FontSize="18" Grid.Row="0" Grid.Column="5" HorizontalTextAlignment="Center"/>
+                <Label Text="Teléfono" TextColor="Red" FontSize="18" Grid.Row="0" Grid.Column="6" HorizontalTextAlignment="Center"/>
+            </Grid>
+        
+
+            <ListView x:Name="ListaUsuarios">
+                <!-- List View datos almacenados en la instancia-->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Text="{Binding IdUsuarios}" TextColor="Black" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="0"/>
+                                    <Label Text="{Binding Nombre}" TextColor="Black"  Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Center"/>
+                                    <Label Text="{Binding Email}" TextColor="Black"  Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Center"/>
+                                    <Label Text="{Binding Contrasena}" TextColor="Black"  Grid.Row="0" Grid.Column="3" HorizontalTextAlignment="Center"/>
+                                    <Label Text="{Binding FechaNacimiento}" TextColor="Black" Grid.Row="0" Grid.Column="4" HorizontalTextAlignment="Center"/>
+                                    <Label Text="{Binding Genero}" TextColor="Black"  Grid.Row="0" Grid.Column="5" HorizontalTextAlignment="Center"/>
+                                    <Label Text="{Binding Telefono}" TextColor="Black"  Grid.Row="0" Grid.Column="6" HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="btnMostrar" Text="Mostrar" Clicked="btnMostrar_Clicked"/>
+           
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>
